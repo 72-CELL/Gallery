@@ -1,0 +1,61 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.gallery .gallery-item {
+  cursor: pointer;
+}
+.gallery .gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.gallery .gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox .lightbox-content {
+  position: relative;
+}
+.lightbox .lightbox-content img {
+  max-width: 90%;
+  max-height: 90%;
+  animation: fadeIn 0.5s;
+}
+.lightbox .lightbox-content .prev, .lightbox .lightbox-content .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+}
+.lightbox .lightbox-content .prev.prev, .lightbox .lightbox-content .next.prev {
+  left: 20px;
+}
+.lightbox .lightbox-content .prev.next, .lightbox .lightbox-content .next.next {
+  right: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=Style.css.map */
